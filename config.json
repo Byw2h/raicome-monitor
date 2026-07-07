@@ -1,0 +1,44 @@
+{
+  "_说明": "===== 睿抗机器人开发者大赛(RAICOM) 成绩监控配置 =====",
+
+  "api": {
+    "list_url": "https://service.raicom.com.cn/doc/list",
+    "detail_url": "https://service.raicom.com.cn/contentDetail",
+    "doc_type": "10",
+    "check_interval_seconds": 600
+  },
+
+  "monitor": {
+    "keywords": ["安徽"],
+    "max_pages": 5
+  },
+
+  "notifications": {
+    "serverchan": {
+      "enabled": true,
+      "send_key": "",
+      "_说明": "Server酱(https://sct.ftqq.com) 免费微信推送。在GitHub Actions中通过 SERVERCHAN_SENDKEY 环境变量传入"
+    },
+    "email": {
+      "enabled": false,
+      "smtp_host": "smtp.qq.com",
+      "smtp_port": 465,
+      "use_ssl": true,
+      "sender": "your_email@qq.com",
+      "password": "你的邮箱SMTP授权码",
+      "receivers": ["receiver@example.com"]
+    },
+    "dingtalk": {
+      "enabled": false,
+      "webhook_url": "你的钉钉机器人Webhook地址",
+      "_说明": "钉钉群机器人Webhook，群设置->智能群助手->添加机器人->自定义"
+    },
+    "wecom": {
+      "enabled": false,
+      "webhook_url": "你的企业微信机器人Webhook地址",
+      "_说明": "企业微信群机器人Webhook"
+    }
+  },
+
+  "state_file": "monitor_state.json"
+}
